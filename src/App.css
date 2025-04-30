@@ -44,14 +44,17 @@ main {
 
 .products-sold {
     background-color: hsl(172, 71%, 80%);
+    border: 1px solid hsl(172, 71%, 40%);
 }
 
 .products-stock {
     background-color: hsl(217, 75%, 80%);
+    border: 1px solid hsl(217, 75%, 40%);
 }
 
 .products-to-sell {
     background-color: hsl(352, 100%, 80%);
+    border: 1px solid hsl(352, 100%, 40%);
 }
 
 .popular-product-container {
@@ -62,7 +65,8 @@ main {
     gap: 2rem;
     padding: 4rem;
     border-radius: .5rem;
-    background-color: #e0e0e0;
+    background-color: hsl(0, 0%, 90%);
+    border: 1px solid hsl(0, 0%, 45%);
 }
 
 .product-info-container {
@@ -75,6 +79,18 @@ main {
     margin: 1rem 0;
     font-size: 1.5rem;
 }
+
+.img-container {
+    border: 1px solid hsl(0, 0%, 45%);
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.img-container > img {
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 768px) {
     .popular-product-container {
