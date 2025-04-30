@@ -1,19 +1,19 @@
-export function createNameString(arr) {
-    if (!arr.brand || !arr.name || !arr.type) {
+export function createNameString(tvObj) {
+    if (!tvObj.brand || !tvObj.name || !tvObj.type) {
         return 'Unknown TV details. Contact support.';
     }
-    return `${arr.brand} ${arr.type} ${arr.name}`;
+    return `${tvObj.brand} ${tvObj.type} – ${tvObj.name}`;
 }
 
-export function priceFormatter(arr) {
-    if (!arr.price) {
+export function priceFormatter(tvObj) {
+    if (!tvObj.price) {
         return 'Price unknown. Contact support.';
     }
-    return `€${arr.price},–`;
+    return `€${tvObj.price},–`;
 }
 
-export function getScreenSizes(arr) {
-    let sizes = arr.availableSizes;
+export function getScreenSizes(tvObj) {
+    let sizes = tvObj.availableSizes;
     let result = "";
     for (let i = 0; i < sizes.length; i++) {
         if (i === sizes.length - 1) {

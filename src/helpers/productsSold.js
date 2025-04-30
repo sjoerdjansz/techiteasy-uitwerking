@@ -14,7 +14,6 @@ export function totalProductsInStock(products) {
     return sum;
 }
 
-
 export function productsToBeSold(stock, sold) {
     return stock - sold;
 }
