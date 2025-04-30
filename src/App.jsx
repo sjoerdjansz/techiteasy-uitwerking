@@ -1,10 +1,19 @@
 import './App.css';
 
+// helper functions
 import {totalProductsSold, totalProductsInStock, productsToBeSold} from "./helpers/productsSold.js";
-import {createNameString, getScreenSizes, priceFormatter} from "./helpers/productPlacement.js";
+import {
+    createNameString,
+    getScreenSizes,
+    priceFormatter,
+} from "./helpers/productPlacement.js";
+import {logsFromExerciseOne} from "./helpers/logger.js";
+
+// data
 import {inventory, bestSellingTv} from "./constants/inventory";
 
 function App() {
+    logsFromExerciseOne();
     return (
         <main>
             <h1>Tech It Easy Dashboard</h1>

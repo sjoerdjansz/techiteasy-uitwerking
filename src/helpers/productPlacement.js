@@ -1,5 +1,3 @@
-import {bestSellingTv} from '../constants/inventory.js';
-
 export function createNameString(arr) {
     if (!arr.brand || !arr.name || !arr.type) {
         return 'Unknown TV details. Contact support.';
@@ -26,7 +24,3 @@ export function getScreenSizes(arr) {
     }
     return result;
 }
-
-console.log(createNameString(bestSellingTv));
-console.log(priceFormatter(bestSellingTv));
-console.log(getScreenSizes(bestSellingTv));

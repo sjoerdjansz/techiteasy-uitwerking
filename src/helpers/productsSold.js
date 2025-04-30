@@ -1,5 +1,3 @@
-import {inventory} from '../constants/inventory.js';
-
 export function totalProductsSold(products) {
     let sum = 0;
     for (let i = 0; i < products.length; i++) {
@@ -7,8 +5,6 @@ export function totalProductsSold(products) {
     }
     return sum;
 }
-
-console.log(totalProductsSold(inventory));
 
 export function totalProductsInStock(products) {
     let sum = 0;
@@ -18,10 +14,8 @@ export function totalProductsInStock(products) {
     return sum;
 }
 
-console.log(totalProductsInStock(inventory));
 
 export function productsToBeSold(stock, sold) {
     return stock - sold;
 }
 
-console.log(productsToBeSold(totalProductsInStock(inventory), totalProductsSold(inventory)));
