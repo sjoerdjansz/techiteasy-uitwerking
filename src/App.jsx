@@ -8,9 +8,9 @@ import {
     priceFormatter,
 } from "./helpers/productPlacement.js";
 
+// import logger functies voor console.logs voor exercise 1 en 2
 import {logsFromExerciseOne} from "./helpers/logger.js";
 import showOutcomeInConsole from './constants/oefenbestand.js';
-
 
 // data
 import {inventory, bestSellingTv} from "./constants/inventory";
@@ -24,10 +24,9 @@ function App() {
         console.log(e.target.innerText);
     }
 
-    showOutcomeInConsole();
-
+    // loggers voor exercises 1 en 2
     // logsFromExerciseOne();
-
+    // showOutcomeInConsole();
 
     return (
         <main>

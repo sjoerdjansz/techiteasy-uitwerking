@@ -17,9 +17,7 @@ function showOutcomeInConsole() {
     console.log(getBigScreenSize(inventory));
 
     console.log('Uitkomst opdracht 1f (uitdaging)');
-    console.log();
-
-
+    console.log(getAmbilight(inventory));
 }
 
 // opdracht 1a
@@ -53,15 +51,22 @@ const getHighRefreshRate = (data) => {
     });
 };
 
-// Opdracht 1e (uitdaging): Gebruik array-methoden om alle informatie te verzamelen van de tv's die beschikbaar
-// zijn in schermgroottes van 65 inch en groter.
+// Opdracht 1e (uitdaging)
+const getBigScreenSize = (data) => {
+    return data.filter((value) => {
+        return value.availableSizes.find((sizes) => {
+            return sizes >= 65;
+        });
+    });
+};
 
-// const getBigScreenSize = (data) => {
-
-// };
-
-
-// Opdracht 1f (uitdaging): Gebruik array-methoden om alle informatie te verzamelen van de tv's die over
-// ambilight beschikken. Log de uitkomst in de console.
+// Opdracht 1f (uitdaging)
+const getAmbilight = (data) => {
+    return data.filter((value) => {
+        return value.options.find((options) => {
+            return options.name === 'ambiLight' && options.applicable === true;
+        });
+    });
+};
 
 export default showOutcomeInConsole;
