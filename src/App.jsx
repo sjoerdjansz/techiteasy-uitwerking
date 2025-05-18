@@ -7,7 +7,10 @@ import {
     getScreenSizes,
     priceFormatter,
 } from "./helpers/productPlacement.js";
+
 import {logsFromExerciseOne} from "./helpers/logger.js";
+import showOutcomeInConsole from './constants/oefenbestand.js';
+
 
 // data
 import {inventory, bestSellingTv} from "./constants/inventory";
@@ -21,61 +24,7 @@ function App() {
         console.log(e.target.innerText);
     }
 
-    // opdracht 1a
-    const getNames = (data) => {
-        const result = data.map((value) => {
-            return value.name;
-        });
-        console.log(result);
-    };
-
-    // getNames(inventory);
-
-    // opdracht 1b
-
-    const getSoldOut = (data) => {
-        const result = data.filter((value) => {
-            return value.originalStock - value.sold <= 0;
-        });
-        console.log(result);
-    };
-
-    // getSoldOut(inventory);
-
-    // opdracht 1c
-
-    const getProductType = (data) => {
-        const result = data.find((value) => {
-            return value.type === 'NH3216SMART';
-        });
-        console.log(result);
-    };
-
-    // getProductType(inventory);
-
-    /*Opdracht 1d: Gebruik een array-methode om een lijst te maken van de merk- en tv-namen
-    waarbij aangegeven wordt of deze geschikt zijn voor sport-kijkers (een verversingssnelheid van
-    100Hz of hoger). Doe dit in het format { name: 'Toshiba HD TV', suitable: false }.
-    Log de uitkomst in de console.
-    */
-
-    const getHighRefreshRate = (data) => {
-        data.filter((value) => {
-            if (value.refreshRate >= 100) {
-                console.log({
-                    name: `${value.brand} ${value.name}`,
-                    suitable: true
-                });
-            } else {
-                console.log({
-                    name: `${value.brand} ${value.name}`,
-                    suitable: false
-                });
-            }
-        });
-    };
-
-    getHighRefreshRate(inventory);
+    showOutcomeInConsole();
 
     // logsFromExerciseOne();
 
