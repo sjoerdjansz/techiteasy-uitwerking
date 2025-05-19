@@ -42,7 +42,20 @@ function App() {
         });
     }
 
+    function sortScreensize(data) {
+        return data.sort((a, b) => {
+            const numberA = a.availableSizes.reduce((acc, currVal) => {
+                return currVal > acc ? currVal : acc;
+            });
+            const numberB = b.availableSizes.reduce((acc, currVal) => {
+                return currVal > acc ? currVal : acc;
+            });
+            return numberB - numberA;
+        });
+    }
+
     // loggers voor exercises 1 en 2
+
     // logsFromExerciseOne();
     // showOutcomeInConsole();
 
@@ -131,6 +144,13 @@ function App() {
                     >
                         Geschikt voor sport
                     </button>
+                    <button
+                        onClick={() => console.log(sortScreensize(inventory))}
+                        className="filter-btn"
+                        type="button"
+                    >
+                        Grootste schermgroottes eerst
+                    </button>
                 </div>
                 <div className="filter-result-container">
                     {/*{inventory.map((value, i) => {*/}
@@ -142,6 +162,8 @@ function App() {
                                 <div className="img-container">
                                     <img src={value.sourceImg} alt="tv-image"/>
                                 </div>
+                                {(value.originalStock - value.sold <= 0) &&
+                                    <p className="sold-out">Uitverkocht!</p>}
                                 <div className="product-info-container">
                                     <h3 className="title">{createNameString(value)}</h3>
                                     <p className="price">{priceFormatter(value)}</p>

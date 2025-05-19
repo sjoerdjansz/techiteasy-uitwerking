@@ -146,6 +146,13 @@ li img {
     background-color: hsl(217, 75%, 80%);
 }
 
+.sold-out {
+    padding: .5rem 1rem;
+    background-color: #ff3636;
+    color: #fff;
+    border-radius: .3rem;
+}
+
 @media only screen and (max-width: 1024px) {
     .popular-product-container {
         flex-direction: column;
