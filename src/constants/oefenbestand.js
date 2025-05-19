@@ -21,52 +21,52 @@ function showOutcomeInConsole() {
 }
 
 // opdracht 1a
-const getNames = (data) => {
+export function getNames(data) {
     return data.map((value) => {
         return value.name;
     });
-};
+}
 
 // opdracht 1b
-const getSoldOut = (data) => {
+export function getSoldOut(data) {
     return data.filter((value) => {
         return value.originalStock - value.sold <= 0;
     });
-};
+}
 
 // opdracht 1c
-const getProductType = (data) => {
+export function getProductType(data) {
     return data.find((value) => {
         return value.type === 'NH3216SMART';
     });
-};
+}
 
 // Opdracht 1d
-const getHighRefreshRate = (data) => {
+export function getHighRefreshRate(data) {
     return data.map((value) => {
         return {
             name: `${value.brand} ${value.name}`,
             suitable: value.refreshRate >= 100
         };
     });
-};
+}
 
 // Opdracht 1e (uitdaging)
-const getBigScreenSize = (data) => {
+export function getBigScreenSize(data) {
     return data.filter((value) => {
         return value.availableSizes.find((sizes) => {
             return sizes >= 65;
         });
     });
-};
+}
 
 // Opdracht 1f (uitdaging)
-const getAmbilight = (data) => {
+export function getAmbilight(data) {
     return data.filter((value) => {
         return value.options.find((options) => {
             return options.name === 'ambiLight' && options.applicable === true;
         });
     });
-};
+}
 
 export default showOutcomeInConsole;

@@ -8,6 +8,7 @@ import {
     priceFormatter,
 } from "./helpers/productPlacement.js";
 
+
 // import logger functies voor console.logs voor exercise 1 en 2
 import {logsFromExerciseOne} from "./helpers/logger.js";
 import showOutcomeInConsole from './constants/oefenbestand.js';
@@ -52,7 +53,7 @@ function App() {
             <section className="overview-container">
                 <h2>Best verkochte TV</h2>
                 <article className="popular-product-container">
-                    <div className="img-container"><img src={bestSellingTv.sourceImg} alt="test-image"/>
+                    <div className="img-container"><img src={bestSellingTv.sourceImg} alt="tv-image"/>
                     </div>
                     <div className="product-info-container">
                         <h3 className="title">{createNameString(bestSellingTv)}</h3>
@@ -78,7 +79,31 @@ function App() {
                     </button>
                 </div>
                 <div className="filter-result-container">
-                    Resultaten hier...
+                    {/*{inventory.map((value, i) => {*/}
+                    {/*    return <li key={i}>{value.type}</li>;*/}
+                    {/*})}*/}
+                    {inventory.map((value, i) => {
+                        return <article key={i} className="popular-product-container">
+                            <div className="img-container"><img src={value.sourceImg}
+                                                                alt="tv-image"/>
+                            </div>
+                            <div className="product-info-container">
+                                <h3 className="title">{createNameString(value)}</h3>
+                                <p className="price">{priceFormatter(value)}</p>
+                                <p className="sizes">{getScreenSizes(value)}</p>
+                                <ul className="options">
+                                    {value.options.map((option, i) => {
+                                        return option.applicable ? <li key={i}>
+                                                <img src={check}
+                                                     alt="check-icon"/>{option.name}</li> :
+                                            <li key={i}>
+                                                <img src={minus}
+                                                     alt="minus-icon"/>{option.name}</li>;
+                                    })}
+                                </ul>
+                            </div>
+                        </article>;
+                    })}
                 </div>
             </section>
         </main>
